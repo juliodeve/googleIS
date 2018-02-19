@@ -17,4 +17,5 @@ public class global {
     public static ArrayList<LatLng> latLngArray = new ArrayList<>();
     public static ArrayList<String> hora = new ArrayList<>();
     public static Uri photo;
+    public static String sdfs;
 }
