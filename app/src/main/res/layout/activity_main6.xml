@@ -16,7 +16,7 @@
             android:id="@+id/txtFecha3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="fecha"
+            android:text="@string/fecha"
             android:textSize="15dp" />
 
     </LinearLayout>
@@ -67,7 +67,7 @@
             android:id="@+id/txtTiempo3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tiempo"
+            android:text="@string/tiempo"
             android:textSize="15dp" />
 
         <TextView
@@ -75,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="Distancia"
+            android:text="@string/distancia"
             android:textSize="15dp" />
     </LinearLayout>
 
@@ -90,14 +90,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
-            android:text="Velocidad"
+            android:text="@string/velocidad"
             android:textSize="15dp" />
 
         <TextView
             android:id="@+id/txtCalorias3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calorias"
+            android:text="@string/calorias"
             android:textSize="15dp" />
 
     </LinearLayout>
@@ -107,14 +107,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnMain3"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Regresar"
-            android:textSize="15dp" />
 
     </LinearLayout>
 

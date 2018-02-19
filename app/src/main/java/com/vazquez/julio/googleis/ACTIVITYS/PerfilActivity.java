@@ -60,12 +60,12 @@ public class PerfilActivity extends AppCompatActivity {
             case R.id.radio_pirates:
                 if (checked)
                     // Pirates are the best
-                    res = "Hombre";
+                    res = getString(R.string.hombre);
                 break;
             case R.id.radio_ninjas:
                 if (checked)
                     // Ninjas rule
-                    res = "Mujer";
+                    res = getString(R.string.mujer);
                 break;
         }
         return res;

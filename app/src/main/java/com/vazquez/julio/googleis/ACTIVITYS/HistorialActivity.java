@@ -45,7 +45,7 @@ public class HistorialActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(getApplicationContext(),"No tiene trayectos",Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), R.string.sin_trayectos,Toast.LENGTH_LONG).show();
                             }
                         });
                     }else{

@@ -43,7 +43,6 @@ public class DetallesTrayectoActivity extends AppCompatActivity implements OnMap
     TextView distancia;
     TextView velocidad;
     TextView calorias;
-    Button regresar;
 
     Trayecto trajet;
 
@@ -62,16 +61,6 @@ public class DetallesTrayectoActivity extends AppCompatActivity implements OnMap
         distancia = findViewById(R.id.txtDistancia3);
         velocidad = findViewById(R.id.txtVelocidad3);
         calorias = findViewById(R.id.txtCalorias3);
-        regresar = findViewById(R.id.btnMain3);
-
-        regresar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), HistorialActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
-        });
 
         Intent intent = getIntent();
         trajet = intent.getParcelableExtra("trajet");
@@ -110,19 +99,19 @@ public class DetallesTrayectoActivity extends AppCompatActivity implements OnMap
                                 mMap = googleMap;
                                 PolylineOptions options = new PolylineOptions().width(15).color(Color.BLUE).geodesic(true);
                                 if (latLngArray.size() > 0) {
-                                    mMap.addMarker(new MarkerOptions().position(latLngArray.get(0)).title("Inicio"));
-                                    mMap.addMarker(new MarkerOptions().position(latLngArray.get(latLngArray.size() - 1)).title("Final"));
+                                    mMap.addMarker(new MarkerOptions().position(latLngArray.get(0)).title(getString(R.string.inicio)));
+                                    mMap.addMarker(new MarkerOptions().position(latLngArray.get(latLngArray.size() - 1)).title(getString(R.string.posicion_actual)));
                                     for (int z = 0; z < latLngArray.size(); z++) {
                                         options.add(latLngArray.get(z));
                                     }
                                     Polyline line = mMap.addPolyline(options);
                                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngArray.get(latLngArray.size() - 1), 19));
                                     DecimalFormat objFormato = new DecimalFormat("#.###");
-                                    fecha.setText("Fecha :" + trajet.getFecha());
-                                    inicio.setText("Inicio a :" + trajet.getHoraI());
-                                    end.setText("Final a :" + trajet.getHoraF());
-                                    duracion.setText("Duracion : " + trajet.getDuracion());
-                                    distancia.setText("Distancia :" + objFormato.format(trajet.getDistancia()) + "km");
+                                    fecha.setText(R.string.fecha+": " + trajet.getFecha());
+                                    inicio.setText(R.string.inicio+": " + trajet.getHoraI());
+                                    end.setText(R.string.final_+": " + trajet.getHoraF());
+                                    duracion.setText(R.string.duracion+": " + trajet.getDuracion());
+                                    distancia.setText(R.string.distancia+": " + objFormato.format(trajet.getDistancia()) + "km");
                                 }
                             }
                         });
@@ -131,7 +120,7 @@ public class DetallesTrayectoActivity extends AppCompatActivity implements OnMap
             };
             tr.start();
         } else {
-            Toast.makeText(getApplicationContext(), "Sin Conexion", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.sin_internet, Toast.LENGTH_SHORT).show();
         }
     }
 }

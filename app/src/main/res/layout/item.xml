@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="160dp"
-                android:text="Fecha"
+                android:text="@string/fecha"
                 android:textColor="#000"
                 android:textSize="20dp" />
 
@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="160dp"
-                android:text="Distancia"
+                android:text="@string/distancia"
                 android:textColor="#000"
                 android:textSize="20dp" />
             <TextView
@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="160dp"
-                android:text="Duracion"
+                android:text="@string/duracion"
                 android:textColor="#000"
                 android:textSize="20dp" />
             <TextView
@@ -61,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="160dp"
-                android:text="Velocidad"
+                android:text="@string/velocidad"
                 android:textColor="#000"
                 android:textSize="20dp"/>
         </LinearLayout>

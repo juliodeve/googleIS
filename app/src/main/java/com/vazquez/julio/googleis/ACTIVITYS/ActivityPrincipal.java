@@ -129,14 +129,14 @@ public class ActivityPrincipal extends AppCompatActivity
                 global.hora.clear();
                 Calendar c1 = Calendar.getInstance();
                 String dia = Integer.toString(c1.get(Calendar.DATE));
-                String mes = Integer.toString(c1.get(Calendar.MONTH)+1);
+                String mes = Integer.toString(c1.get(Calendar.MONTH) + 1);
                 String annio = Integer.toString(c1.get(Calendar.YEAR));
                 String hora = Integer.toString(c1.get(Calendar.HOUR_OF_DAY));
                 String minutos = Integer.toString(c1.get(Calendar.MINUTE));
                 String seg = Integer.toString(c1.get(Calendar.SECOND));
-                fecha = annio +"/"+mes+"/"+dia;
-                horaI = hora+":"+minutos+":"+seg;
-                Toast.makeText(ActivityPrincipal.this, "Empiece a correr cuando aparezca su posicion", Toast.LENGTH_LONG).show();
+                fecha = annio + "/" + mes + "/" + dia;
+                horaI = hora + ":" + minutos + ":" + seg;
+                Toast.makeText(ActivityPrincipal.this, R.string.comenzar_correr, Toast.LENGTH_LONG).show();
 
                 final Thread tr = new Thread() {
                     @Override
@@ -161,12 +161,12 @@ public class ActivityPrincipal extends AppCompatActivity
                         String minutos = Integer.toString(c1.get(Calendar.MINUTE));
                         String seg = Integer.toString(c1.get(Calendar.SECOND));
 
-                        global.hora.add(hora+":"+minutos+":"+seg);
+                        global.hora.add(hora + ":" + minutos + ":" + seg);
                         global.latLngArray.add(coordenadas);
                         if (global.map) {
                             mMap.clear();
-                            mMap.addMarker(new MarkerOptions().position(global.latLngArray.get(0)).title("Inicio"));
-                            mMap.addMarker(new MarkerOptions().position(global.latLngArray.get(global.latLngArray.size()-1)).title("Final"));
+                            mMap.addMarker(new MarkerOptions().position(global.latLngArray.get(0)).title(getString(R.string.inicio)));
+                            mMap.addMarker(new MarkerOptions().position(global.latLngArray.get(global.latLngArray.size() - 1)).title(getString(R.string.posicion_actual)));
                             task();
                         }
                     }
@@ -196,7 +196,7 @@ public class ActivityPrincipal extends AppCompatActivity
                 duracion = cr.getText().toString();
                 global.map = false;
                 if (global.latLngArray.size() > 1) {
-                    mMap.addMarker(new MarkerOptions().position(global.latLngArray.get(global.latLngArray.size() - 1)).title("Final"));
+                    mMap.addMarker(new MarkerOptions().position(global.latLngArray.get(global.latLngArray.size() - 1)).title(getString(R.string.final_)));
                 }
                 long elapsedMillis = SystemClock.elapsedRealtime() - cr.getBase();
                 double heures = elapsedMillis * 0.000001;
@@ -204,7 +204,7 @@ public class ActivityPrincipal extends AppCompatActivity
                 String hora = Integer.toString(c1.get(Calendar.HOUR_OF_DAY));
                 String minutos = Integer.toString(c1.get(Calendar.MINUTE));
                 String seg = Integer.toString(c1.get(Calendar.SECOND));
-                horaF = hora+":"+minutos+":"+seg;
+                horaF = hora + ":" + minutos + ":" + seg;
                 Intent intent = new Intent(ActivityPrincipal.this, ResultadosActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("horaI", horaI);
@@ -215,7 +215,7 @@ public class ActivityPrincipal extends AppCompatActivity
                 intent.putExtra("distancia", distance);
                 intent.putExtra("duracion", duracion);
                 intent.putExtra("calorias", calorias);
-                intent.putExtra("idT",resTra);
+                intent.putExtra("idT", resTra);
                 startActivity(intent);
             }
         });
@@ -276,8 +276,6 @@ public class ActivityPrincipal extends AppCompatActivity
                 public void onResult(@NonNull Status status) {
                     if (status.isSuccess()) {
                         goLoginScreen();
-                    } else {
-                        Toast.makeText(getApplicationContext(), "No close session", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -295,10 +293,10 @@ public class ActivityPrincipal extends AppCompatActivity
 
         if (id == R.id.nav_perfil) {
             // Handle the camera action
-            Intent intent = new Intent(this,PerfilActivity.class);
+            Intent intent = new Intent(this, PerfilActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_historial) {
-            Intent intent = new Intent(this,HistorialActivity.class);
+            Intent intent = new Intent(this, HistorialActivity.class);
             startActivity(intent);
         }
 
@@ -376,19 +374,6 @@ public class ActivityPrincipal extends AppCompatActivity
         startActivity(intent);
     }
 
-    public void logOut(View view) {
-        Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
-            @Override
-            public void onResult(@NonNull Status status) {
-                if (status.isSuccess()) {
-                    goLoginScreen();
-                } else {
-                    Toast.makeText(getApplicationContext(), "No close session", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
-
     public void task() {
 //                        mMap.addMarker(new MarkerOptions().position(coordenadas).title("Estas aqui"));
 
@@ -412,8 +397,7 @@ public class ActivityPrincipal extends AppCompatActivity
                 txtVelocidad.setText(objFormato.format(vel) + " Km/h");
             }
         }
-
         Polyline line = mMap.addPolyline(options);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(global.latLngArray.get(global.latLngArray.size() - 1), 19));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(global.latLngArray.get(global.latLngArray.size() - 1), 17));
     }
 }

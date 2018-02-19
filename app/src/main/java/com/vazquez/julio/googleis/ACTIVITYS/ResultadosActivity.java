@@ -68,7 +68,7 @@ public class ResultadosActivity extends AppCompatActivity implements OnMapReadyC
         calorias = intent.getIntExtra("calorias", 0);
         idT = intent.getStringExtra("idT");
 
-        txtFecha.setText("Fecha: " + fecha);
+        txtFecha.setText(R.string.fecha+": " + fecha);
         txtInicio.setText(horaI);
         txtFinal.setText(horaF);
         txtDuracion.setText(duracion);
@@ -133,7 +133,6 @@ public class ResultadosActivity extends AppCompatActivity implements OnMapReadyC
             };
             tr2.start();
         }
-        Toast.makeText(getApplicationContext(),fecha +" " +horaI+" " +horaF+" " +distancia+" dura" +duracion+" vrlo" +velocidad,Toast.LENGTH_LONG).show();
     }
 
 }

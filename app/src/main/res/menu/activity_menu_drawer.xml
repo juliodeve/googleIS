@@ -7,19 +7,19 @@
         <item
             android:id="@+id/nav_perfil"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Perfil" />
+            android:title="@string/perfil" />
         <item
             android:id="@+id/nav_historial"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Historial" />
+            android:title="@string/historial" />
         <item
             android:id="@+id/nav_commencer"
             android:icon="@mipmap/ic_directions_run_black_24dp"
-            android:title="Commancer" />
+            android:title="@string/comenzar" />
         <item
             android:id="@+id/nav_objectif"
             android:icon="@mipmap/ic_book_black_24dp"
-            android:title="Objectif" />
+            android:title="@string/objetivos" />
 
         <!--<item-->
             <!--android:id="@+id/nav_slideshow"-->
