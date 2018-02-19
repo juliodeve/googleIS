@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             public void onClick(View view) {
                 if (isOnline()) {
                     if (esEmailCorrecto(actMail.getText().toString())) {
-                        if (etPass.length() >= 8 & etPass.length()<=16) {
+                        if (etPass.length() >= 8 & etPass.length() <= 16) {
                             taskBtnInscription();
                         } else {
                             Toast.makeText(getApplicationContext(), R.string.contraseña_corta, Toast.LENGTH_SHORT).show();
@@ -214,9 +214,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         if (res.equals("OK")) {
                             goMainScreen("si", actMail.getText().toString());
                         } else {
-                            if (res.equals("ACTIVAR")){
+                            if (res.equals("ACTIVAR")) {
                                 Toast.makeText(getApplicationContext(), R.string.activar_cuenta, Toast.LENGTH_SHORT).show();
-                            } else if (res.equals("USERPASS")){
+                            } else if (res.equals("USERPASS")) {
                                 Toast.makeText(getApplicationContext(), R.string.correo_contraseña_incorrecta, Toast.LENGTH_SHORT).show();
                             }
                         }
