@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.vazquez.julio.googleis.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/actMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mail"
+            android:textSize="20sp"
+            android:layout_marginBottom="5dp"
+            />
+
+        <EditText
+            android:id="@+id/etPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/top10dp"
+            android:hint="@string/password"
+            android:textSize="20sp"
+            />
+
+        <Button
+            android:id="@+id/btnAccess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/top15dp"
+            android:background="@color/ButtonJaune"
+            android:textColor="@color/colorEcriture"
+            android:textSize="20sp"
+            android:text="@string/btnLogin"
+
+            />
+
+        <Button
+            android:id="@+id/btnInscription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/top10dp"
+            android:background="@color/ButtonJaune"
+            android:textColor="@color/colorEcriture"
+            android:textSize="20sp"
+            android:text="@string/sign_in" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/btnGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/top10dp"
+            android:textAlignment="center"
+            >
+
+        </com.google.android.gms.common.SignInButton>
+
+    </LinearLayout>
+
+</LinearLayout>

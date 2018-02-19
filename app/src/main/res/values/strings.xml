@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">My App</string>
+    <string name="mail">Email</string>
+    <string name="password">Password</string>
+    <string name="btnLogin">Login</string>
+    <string name="sign_in">Sign In</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="Incoorrect_MP">Incorrect mail or password</string>
+    <string name="Invalid_email">Invalid email</string>
+    <string name="SignInOK">Sign in OK</string>
+    <string name="no_internet">Whitoun internet connexion</string>
+    <string name="title_activity_menu">MenuActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="time">time</string>
+    <string name="CurrentPosition">My current position</string>
+    <string name="action_logout">Log Out</string>
+    <string name="short_password">Password should to have beetwen 8 and 16 chars-</string>
+</resources>

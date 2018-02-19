@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Mon App</string>
+    <string name="mail">Email</string>
+    <string name="password">Mot de Passe</string>
+    <string name="btnLogin">Se connecter</string>
+    <string name="sign_in">Inscription</string>
+    <string name="title_activity_maps">Map</string>
+</resources>
