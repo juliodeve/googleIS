@@ -1,16 +1,15 @@
-package com.vazquez.julio.googleis;
+package com.vazquez.julio.googleis.HTTPMANAGER;
 
 import android.util.Base64;
-import android.util.Log;
+
+import com.vazquez.julio.googleis.POJO.Coordenadas;
+import com.vazquez.julio.googleis.POJO.Trayecto;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;

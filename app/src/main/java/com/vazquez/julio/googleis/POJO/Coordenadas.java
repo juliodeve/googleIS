@@ -1,13 +1,14 @@
-package com.vazquez.julio.googleis;
+package com.vazquez.julio.googleis.POJO;
 
 /**
  * Created by julio on 14/02/2018.
  */
 
 public class Coordenadas {
-    Double latitud;
-    Double longitud;
-    int idTrajet;
+    private Double latitud;
+    private Double longitud;
+    private int idTrajet;
+    private String hora;
 
     public String getHora() {
         return hora;
@@ -16,8 +17,6 @@ public class Coordenadas {
     public void setHora(String hora) {
         this.hora = hora;
     }
-
-    String hora;
 
     public Double getLatitud() {
         return latitud;

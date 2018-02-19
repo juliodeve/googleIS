@@ -1,16 +1,13 @@
-package com.vazquez.julio.googleis;
+package com.vazquez.julio.googleis.ACTIVITYS;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -23,14 +20,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.vazquez.julio.googleis.HTTPMANAGER.global;
+import com.vazquez.julio.googleis.HTTPMANAGER.service;
+import com.vazquez.julio.googleis.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import java.io.DataOutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -130,13 +126,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
     private void goMainScreen() {
-        Intent intent = new Intent(this, Main2Activity.class);
+        Intent intent = new Intent(this, ActivityPrincipal.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
     private void goMainScreen(String result, String mail) {
-        Intent intent = new Intent(this, Main2Activity.class);
+        Intent intent = new Intent(this, ActivityPrincipal.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.putExtra("result", result);
         intent.putExtra("mail", mail);

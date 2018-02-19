@@ -1,9 +1,11 @@
-package com.vazquez.julio.googleis;
+package com.vazquez.julio.googleis.ACTIVITYS;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+
+import com.vazquez.julio.googleis.R;
 
 /**
  * Created by julio on 18/02/2018.
@@ -20,7 +22,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent splash = new Intent(SplashScreenActivity.this, Main2Activity.class);
+                Intent splash = new Intent(SplashScreenActivity.this, ActivityPrincipal.class);
                 startActivity(splash);
                 finish();
             }

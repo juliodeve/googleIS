@@ -1,4 +1,4 @@
-package com.vazquez.julio.googleis;
+package com.vazquez.julio.googleis.ACTIVITYS;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -19,6 +19,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+import com.vazquez.julio.googleis.HTTPMANAGER.global;
+import com.vazquez.julio.googleis.R;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 

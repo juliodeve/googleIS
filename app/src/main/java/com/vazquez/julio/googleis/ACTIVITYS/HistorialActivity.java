@@ -1,4 +1,4 @@
-package com.vazquez.julio.googleis;
+package com.vazquez.julio.googleis.ACTIVITYS;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -7,12 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.Toast;
+
+import com.vazquez.julio.googleis.ADAPTERS.TrayectoAdapter;
+import com.vazquez.julio.googleis.HTTPMANAGER.global;
+import com.vazquez.julio.googleis.HTTPMANAGER.service;
+import com.vazquez.julio.googleis.POJO.Trayecto;
+import com.vazquez.julio.googleis.R;
 
 import java.util.List;
 
-public class Main5Activity extends AppCompatActivity {
+public class HistorialActivity extends AppCompatActivity {
 
     List<Trayecto> usuarioList;
     RecyclerView recyclerView;

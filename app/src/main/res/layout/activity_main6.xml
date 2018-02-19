@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.vazquez.julio.googleis.Main6Activity">
+    tools:context="com.vazquez.julio.googleis.ACTIVITYS.DetallesTrayectoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

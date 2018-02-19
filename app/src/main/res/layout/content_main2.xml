@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.vazquez.julio.googleis.Main2Activity"
+    tools:context="com.vazquez.julio.googleis.ACTIVITYS.ActivityPrincipal"
     tools:showIn="@layout/app_bar_main2">
 
     <LinearLayout

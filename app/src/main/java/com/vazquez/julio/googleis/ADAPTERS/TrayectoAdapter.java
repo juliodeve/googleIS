@@ -1,4 +1,4 @@
-package com.vazquez.julio.googleis;
+package com.vazquez.julio.googleis.ADAPTERS;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,8 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
+import com.vazquez.julio.googleis.ACTIVITYS.DetallesTrayectoActivity;
+import com.vazquez.julio.googleis.POJO.Trayecto;
+import com.vazquez.julio.googleis.R;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class TrayectoAdapter extends RecyclerView.Adapter<TrayectoAdapter.ViewHo
                 ArrayList<Trayecto> trayectos = new ArrayList<Trayecto>();
                 Trayecto trayecto = usuarioList.get(position);
                 trayecto.setTrayectos(trayectos);
-                Intent intent = new Intent(context, Main6Activity.class);
+                Intent intent = new Intent(context, DetallesTrayectoActivity.class);
                 intent.putExtra("trajet", usuarioList.get(position));
                 context.startActivity(intent);
             }

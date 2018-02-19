@@ -21,17 +21,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity"
+        <activity android:name=".ACTIVITYS.MainActivity" />
+        <activity android:name=".ACTIVITYS.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".Main2Activity"
+            android:name=".ACTIVITYS.ActivityPrincipal"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name=".SplashScreenActivity"
+        <activity android:name=".ACTIVITYS.SplashScreenActivity"
             android:label="splash"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -52,10 +52,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".Main3Activity" />
-        <activity android:name=".Main4Activity" />
-        <activity android:name=".Main5Activity" />
-        <activity android:name=".Main6Activity"></activity>
+        <activity android:name=".ACTIVITYS.ResultadosActivity" />
+        <activity android:name=".ACTIVITYS.PerfilActivity" />
+        <activity android:name=".ACTIVITYS.HistorialActivity" />
+        <activity android:name=".ACTIVITYS.DetallesTrayectoActivity"></activity>
     </application>
 
 </manifest>

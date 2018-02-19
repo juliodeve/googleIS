@@ -1,4 +1,4 @@
-package com.vazquez.julio.googleis;
+package com.vazquez.julio.googleis.HTTPMANAGER;
 
 import android.net.Uri;
 
@@ -17,5 +17,4 @@ public class global {
     public static ArrayList<LatLng> latLngArray = new ArrayList<>();
     public static ArrayList<String> hora = new ArrayList<>();
     public static Uri photo;
-    public static String sdfs;
 }

@@ -1,4 +1,4 @@
-package com.vazquez.julio.googleis;
+package com.vazquez.julio.googleis.ADAPTERS;
 
 import android.view.View;
 

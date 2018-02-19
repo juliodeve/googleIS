@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.vazquez.julio.googleis.Main2Activity"
+    tools:context="com.vazquez.julio.googleis.ACTIVITYS.ActivityPrincipal"
     tools:openDrawer="start">
 
 
@@ -15,7 +15,7 @@
         layout="@layout/app_bar_main2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.vazquez.julio.googleis.Main2Activity" />
+        tools:context="com.vazquez.julio.googleis.ACTIVITYS.ActivityPrincipal" />
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
@@ -25,6 +25,6 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main2"
         app:menu="@menu/activity_main2_drawer"
-        tools:context="com.vazquez.julio.googleis.Main2Activity" />
+        tools:context="com.vazquez.julio.googleis.ACTIVITYS.ActivityPrincipal" />
 
 </android.support.v4.widget.DrawerLayout>

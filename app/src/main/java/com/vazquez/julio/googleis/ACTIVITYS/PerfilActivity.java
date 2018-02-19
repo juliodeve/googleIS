@@ -1,4 +1,4 @@
-package com.vazquez.julio.googleis;
+package com.vazquez.julio.googleis.ACTIVITYS;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -11,9 +11,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.vazquez.julio.googleis.HTTPMANAGER.global;
+import com.vazquez.julio.googleis.R;
+
 import java.util.Calendar;
 
-public class Main4Activity extends AppCompatActivity {
+public class PerfilActivity extends AppCompatActivity {
 
     private int mYear;
     private int mMonth;

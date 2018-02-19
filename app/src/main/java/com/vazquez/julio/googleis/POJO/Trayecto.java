@@ -1,4 +1,4 @@
-package com.vazquez.julio.googleis;
+package com.vazquez.julio.googleis.POJO;
 
 import android.os.Parcel;
 import android.os.Parcelable;

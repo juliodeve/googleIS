@@ -1,4 +1,4 @@
-package com.vazquez.julio.googleis;
+package com.vazquez.julio.googleis.ACTIVITYS;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,8 +7,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,12 +20,16 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.vazquez.julio.googleis.HTTPMANAGER.service;
+import com.vazquez.julio.googleis.POJO.Coordenadas;
+import com.vazquez.julio.googleis.POJO.Trayecto;
+import com.vazquez.julio.googleis.R;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main6Activity extends AppCompatActivity implements OnMapReadyCallback {
+public class DetallesTrayectoActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     List<Coordenadas> usuarioList;
     List<Trayecto> tra;
@@ -63,7 +65,7 @@ public class Main6Activity extends AppCompatActivity implements OnMapReadyCallba
         regresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Main5Activity.class);
+                Intent intent = new Intent(getApplicationContext(), HistorialActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }

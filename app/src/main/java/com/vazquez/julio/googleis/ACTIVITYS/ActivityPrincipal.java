@@ -1,4 +1,4 @@
-package com.vazquez.julio.googleis;
+package com.vazquez.julio.googleis.ACTIVITYS;
 
 import android.Manifest;
 import android.content.Context;
@@ -11,7 +11,6 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -20,7 +19,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,13 +48,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.maps.android.SphericalUtil;
+import com.vazquez.julio.googleis.HTTPMANAGER.global;
+import com.vazquez.julio.googleis.HTTPMANAGER.service;
+import com.vazquez.julio.googleis.R;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 
-public class Main2Activity extends AppCompatActivity
+public class ActivityPrincipal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback,
         GoogleApiClient.OnConnectionFailedListener {
 
@@ -137,7 +136,7 @@ public class Main2Activity extends AppCompatActivity
                 String seg = Integer.toString(c1.get(Calendar.SECOND));
                 fecha = annio +"/"+mes+"/"+dia;
                 horaI = hora+":"+minutos+":"+seg;
-                Toast.makeText(Main2Activity.this, "Empiece a correr cuando aparezca su posicion", Toast.LENGTH_LONG).show();
+                Toast.makeText(ActivityPrincipal.this, "Empiece a correr cuando aparezca su posicion", Toast.LENGTH_LONG).show();
 
                 final Thread tr = new Thread() {
                     @Override
@@ -151,7 +150,7 @@ public class Main2Activity extends AppCompatActivity
 
                 global.map = true;
 
-                LocationManager locationManager = (LocationManager) Main2Activity.this.getSystemService(Context.LOCATION_SERVICE);
+                LocationManager locationManager = (LocationManager) ActivityPrincipal.this.getSystemService(Context.LOCATION_SERVICE);
                 final LocationListener locationListener = new LocationListener() {
                     @Override
                     public void onLocationChanged(Location location) {
@@ -185,7 +184,7 @@ public class Main2Activity extends AppCompatActivity
                     }
                 };
 
-                int permissionCheck = ContextCompat.checkSelfPermission(Main2Activity.this, Manifest.permission.ACCESS_FINE_LOCATION);
+                int permissionCheck = ContextCompat.checkSelfPermission(ActivityPrincipal.this, Manifest.permission.ACCESS_FINE_LOCATION);
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
             }
         });
@@ -206,7 +205,7 @@ public class Main2Activity extends AppCompatActivity
                 String minutos = Integer.toString(c1.get(Calendar.MINUTE));
                 String seg = Integer.toString(c1.get(Calendar.SECOND));
                 horaF = hora+":"+minutos+":"+seg;
-                Intent intent = new Intent(Main2Activity.this, Main3Activity.class);
+                Intent intent = new Intent(ActivityPrincipal.this, ResultadosActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("horaI", horaI);
                 intent.putExtra("horaF", horaF);
@@ -296,10 +295,10 @@ public class Main2Activity extends AppCompatActivity
 
         if (id == R.id.nav_perfil) {
             // Handle the camera action
-            Intent intent = new Intent(this,Main4Activity.class);
+            Intent intent = new Intent(this,PerfilActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_historial) {
-            Intent intent = new Intent(this,Main5Activity.class);
+            Intent intent = new Intent(this,HistorialActivity.class);
             startActivity(intent);
         }
 
