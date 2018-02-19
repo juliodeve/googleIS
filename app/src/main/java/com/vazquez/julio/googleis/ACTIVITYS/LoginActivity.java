@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 if (isOnline()) {
                     taskBtnAcces();
                 } else {
-                    Toast.makeText(getApplicationContext(), R.string.no_internet, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.sin_internet, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -68,16 +68,16 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             public void onClick(View view) {
                 if (isOnline()) {
                     if (esEmailCorrecto(actMail.getText().toString())) {
-                        if (etPass.length() >= 8) {
+                        if (etPass.length() >= 8 & etPass.length()<=16) {
                             taskBtnInscription();
                         } else {
-                            Toast.makeText(getApplicationContext(), R.string.short_password, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), R.string.contraseña_corta, Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(getApplicationContext(), R.string.Invalid_email, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), R.string.correo_invalido, Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(getApplicationContext(), R.string.no_internet, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.sin_internet, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -121,7 +121,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         if (result.isSuccess()) {
             goMainScreen();
         } else {
-            Toast.makeText(this, "No connection", Toast.LENGTH_SHORT);
+            Toast.makeText(this, R.string.no_se_pudo_conectar, Toast.LENGTH_SHORT);
         }
     }
 
@@ -187,7 +187,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     public void run() {
                         int r = objJSON(res);
                         if (res.equals("OK")) {
-                            Toast.makeText(getApplication(), R.string.SignInOK, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplication(), R.string.inscripcion_correcta, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplication(), R.string.resivira_correo_confirmacion, Toast.LENGTH_SHORT).show();
                             actMail.setText("");
                             etPass.setText("");
                         } else {
@@ -213,7 +214,11 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         if (res.equals("OK")) {
                             goMainScreen("si", actMail.getText().toString());
                         } else {
-                            Toast.makeText(getApplicationContext(), res, Toast.LENGTH_SHORT).show();
+                            if (res.equals("ACTIVAR")){
+                                Toast.makeText(getApplicationContext(), R.string.activar_cuenta, Toast.LENGTH_SHORT).show();
+                            } else if (res.equals("USERPASS")){
+                                Toast.makeText(getApplicationContext(), R.string.correo_contraseña_incorrecta, Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 });

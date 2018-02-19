@@ -22,7 +22,7 @@
             android:id="@+id/actMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/mail"
+            android:hint="@string/correo"
             android:textSize="20sp"
             android:layout_marginBottom="5dp"
             />
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/top10dp"
-            android:hint="@string/password"
+            android:hint="@string/contraseña"
             android:textSize="20sp"
             />
 
@@ -44,7 +44,7 @@
             android:background="@color/ButtonJaune"
             android:textColor="@color/colorEcriture"
             android:textSize="20sp"
-            android:text="@string/btnLogin"
+            android:text="@string/iniciar_sesion"
 
             />
 
@@ -56,7 +56,7 @@
             android:background="@color/ButtonJaune"
             android:textColor="@color/colorEcriture"
             android:textSize="20sp"
-            android:text="@string/sign_in" />
+            android:text="@string/inscribirse" />
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/btnGoogle"

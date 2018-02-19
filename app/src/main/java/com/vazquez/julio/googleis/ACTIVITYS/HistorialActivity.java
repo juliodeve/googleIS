@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.vazquez.julio.googleis.ADAPTERS.TrayectoAdapter;
 import com.vazquez.julio.googleis.HTTPMANAGER.global;
 import com.vazquez.julio.googleis.HTTPMANAGER.service;
+import com.vazquez.julio.googleis.PARSERS.ParserTrayecto;
 import com.vazquez.julio.googleis.POJO.Trayecto;
 import com.vazquez.julio.googleis.R;
 
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class HistorialActivity extends AppCompatActivity {
 
-    List<Trayecto> usuarioList;
+    List<Trayecto> TrayectosList;
     RecyclerView recyclerView;
     TrayectoAdapter adapterRV;
 
@@ -48,12 +49,12 @@ public class HistorialActivity extends AppCompatActivity {
                             }
                         });
                     }else{
-                        usuarioList = service.parser(resTra);
+                        TrayectosList = ParserTrayecto.parser(resTra);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                if (usuarioList.size()>0){
-                                    adapterRV = new TrayectoAdapter(getApplicationContext(),usuarioList);
+                                if (TrayectosList.size()>0){
+                                    adapterRV = new TrayectoAdapter(getApplicationContext(), TrayectosList);
                                     recyclerView.setAdapter(adapterRV);
                                     recyclerView.setHasFixedSize(true);
 

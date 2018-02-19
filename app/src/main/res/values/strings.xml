@@ -1,25 +1,27 @@
 <resources>
-    <string name="app_name">My App</string>
-    <string name="mail">Email</string>
-    <string name="password">Password</string>
-    <string name="btnLogin">Login</string>
-    <string name="sign_in">Sign In</string>
+    <string name="app_name">Proyecto</string>
+    <string name="correo">Correo</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="iniciar_sesion">Iniciar sesion</string>
+    <string name="inscribirse">Inscribirse In</string>
     <string name="title_activity_maps">Map</string>
-    <string name="Incoorrect_MP">Incorrect mail or password</string>
-    <string name="Invalid_email">Invalid email</string>
-    <string name="SignInOK">Sign in OK</string>
-    <string name="no_internet">Whitoun internet connexion</string>
+    <string name="correo_contraseña_incorrecta">Correo o contraseña incorrecta</string>
+    <string name="correo_invalido">Correo no valido</string>
+    <string name="inscripcion_correcta">Inscripción correcta</string>
+    <string name="sin_internet">No hay conexion a internet</string>
     <string name="title_activity_menu">MenuActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configuracion</string>
     <string name="title_activity_main2">Main2Activity</string>
-    <string name="start">Start</string>
-    <string name="end">End</string>
-    <string name="time">time</string>
-    <string name="CurrentPosition">My current position</string>
-    <string name="action_logout">Log Out</string>
-    <string name="short_password">Password should to have beetwen 8 and 16 chars-</string>
+    <string name="inicio">Inicio</string>
+    <string name="final_">Final</string>
+    <string name="tiempo">tiempo</string>
+    <string name="salir">Salir</string>
+    <string name="contraseña_corta">La contraseña debe tener entre 8 y 16 caracteres</string>
+    <string name="no_se_pudo_conectar">No se pudo conectar</string>
+    <string name="activar_cuenta">Aun no has activado tu cuenta</string>
+    <string name="resivira_correo_confirmacion">Resivira un correo de activacion, favor de revisar su bandeja de entrada</string>
 </resources>
