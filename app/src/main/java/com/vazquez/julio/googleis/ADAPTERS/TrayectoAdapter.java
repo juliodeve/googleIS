@@ -40,11 +40,11 @@ public class TrayectoAdapter extends RecyclerView.Adapter<TrayectoAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         DecimalFormat objFormato = new DecimalFormat("#.###");
-        holder.velocidad.setText("Velocidad: "+objFormato.format(usuarioList.get(position).getVelocidad())+"km/h");
-        holder.distancia.setText("Distancia: "+objFormato.format(usuarioList.get(position).getDistancia())+"Km");
-        holder.duracion.setText("Duracion: "+usuarioList.get(position).getDuracion()+"Min");
+        holder.velocidad.setText(context.getString(R.string.velocidad)+": "+objFormato.format(usuarioList.get(position).getVelocidad())+"km/h");
+        holder.distancia.setText(context.getString(R.string.distancia)+": "+objFormato.format(usuarioList.get(position).getDistancia())+"Km");
+        holder.duracion.setText(context.getString(R.string.duracion)+": "+usuarioList.get(position).getDuracion()+"Min");
         //Glide.with(context).load(global.photo).into(holder.photo);
-        holder.fecha.setText("Fecha: "+usuarioList.get(position).getFecha());
+        holder.fecha.setText(context.getString(R.string.fecha)+": "+usuarioList.get(position).getFecha());
         holder.setClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {

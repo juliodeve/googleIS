@@ -57,12 +57,12 @@ public class PerfilActivity extends AppCompatActivity {
         String res = "";
         // Check which radio button was clicked
         switch (view.getId()) {
-            case R.id.radio_pirates:
+            case R.id.radio_hombre:
                 if (checked)
                     // Pirates are the best
                     res = getString(R.string.hombre);
                 break;
-            case R.id.radio_ninjas:
+            case R.id.radio_mujer:
                 if (checked)
                     // Ninjas rule
                     res = getString(R.string.mujer);

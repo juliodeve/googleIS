@@ -192,7 +192,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                             actMail.setText("");
                             etPass.setText("");
                         } else {
-                            Toast.makeText(getApplicationContext(), res, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), R.string.correo_registrado, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
