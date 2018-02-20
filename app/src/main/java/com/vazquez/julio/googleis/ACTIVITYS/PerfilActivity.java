@@ -11,7 +11,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.vazquez.julio.googleis.HTTPMANAGER.ActualizarPerfil;
 import com.vazquez.julio.googleis.HTTPMANAGER.global;
+import com.vazquez.julio.googleis.HTTPMANAGER.service;
 import com.vazquez.julio.googleis.R;
 
 import java.util.Calendar;
@@ -25,6 +27,11 @@ public class PerfilActivity extends AppCompatActivity {
     private Button mPickDate;
     static final int DATE_DIALOG_ID = 0;
     EditText txtCorreo;
+    EditText txtNombre;
+    EditText txtAltura;
+    EditText txtPeso;
+    Button btnGuardar;
+    int sexo=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,25 +57,40 @@ public class PerfilActivity extends AppCompatActivity {
         // display the current date
         updateDisplay();
 
+        btnGuardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String nacimiento= mYear+"/"+mMonth+"/"+mDay;
+                final Thread tr = new Thread() {
+                    @Override
+                    public void run() {
+                        super.run();
+                        ActualizarPerfil s = new ActualizarPerfil();
+                        String resTra = s.enviarPost(global.email, txtNombre.getText().toString(), Integer.parseInt(txtPeso.getText().toString()), Integer.parseInt(txtAltura.getText().toString()),  nacimiento, sexo, "http://www.juliovazquez.net/TrailWebServices/perfil.php");
+                    }
+                };
+                tr.start();
+            }
+        });
+
     }
 
-    public String onRadioButtonClicked(View view) {
+    public int onRadioButtonClicked(View view) {
         boolean checked = ((RadioButton) view).isChecked();
-        String res = "";
         // Check which radio button was clicked
         switch (view.getId()) {
             case R.id.radio_hombre:
                 if (checked)
                     // Pirates are the best
-                    res = getString(R.string.hombre);
+                    sexo = 1;
                 break;
             case R.id.radio_mujer:
                 if (checked)
                     // Ninjas rule
-                    res = getString(R.string.mujer);
+                    sexo = 2;
                 break;
         }
-        return res;
+        return sexo;
     }
 
     private void updateDisplay() {

@@ -43,18 +43,6 @@
                         android:layout_height="wrap_content"
                         android:textSize="20dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/apellidos"
-                        android:textSize="20dp" />
-
-                    <EditText
-                        android:id="@+id/txtApellidos"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp" />
-
                 </LinearLayout>
 
             </LinearLayout>
